@@ -1,0 +1,11 @@
+<options>
+    <option id="__OPTION_1_UNIQUE_IDENTIFIER__">
+        <title>__OPTION_1_TITLE__</title>
+    </option>
+    <option id="__OPTION_2_UNIQUE_IDENTIFIER__">
+        <title>__OPTION_2_TITLE__</title>
+    </option>
+    <option id="__OPTION_3_UNIQUE_IDENTIFIER__">
+        <title>__OPTION_3_TITLE__</title>
+    </option>
+</options>
