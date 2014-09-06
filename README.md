@@ -1,13 +1,13 @@
-#### PVote
-### Table Of Content
+# PVote
+## Table Of Content
 * [What is it](#what-is-it)
 * [Installation](#installation)
 
-### <a name="what-is-it"></a>What is it
-PVote is Voting application which burst into existence during the 5th ZConf (Zanjan Conference) 2014 to find out the most favoured workshops to be held. Although it can be used for elections taking place over LAN (Local Area Network).
+## <a name="what-is-it"></a>What is it
+PVote is a Voting application which burst into existence during the 5th [ZConf](http://www.zconf.ir) (Zanjan Conference) 2014 to find out the most favoured workshops to be held. Although it can be used for elections taking place over LAN (Local Area Network).
 
-### <a name="installation"></a>Installation
-## <a name="requisites"></a>Requisites
+## <a name="installation"></a>Installation
+#### <a name="requisites"></a>Requisites
 * PHP with [Phalcon](http://www.phalconphp.com) extension enabled
 * HTTP Server with rewrite extension enabled (Rather [Apache](http://httpd.apache.org/), if another is used you have to write rewrite rules located in .htaccess and front/.htaccess your own)
 
