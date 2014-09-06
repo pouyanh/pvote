@@ -44,6 +44,15 @@ class Bootstrap
                 $config->setVariable('MODE', getenv('MODE') ? getenv('MODE') : self::DEFAULT_MODE);
                 $config->merge(new JsonConfig(__DIR__ . '/Config/' . $config->getVariable('MODE') . '.json'));
 
+                $storeDir = $config->get('storage.path');
+                if (!is_dir($storeDir)) {
+                    mkdir($storeDir, 0770, true);
+                }
+
+                if (!is_writable($storeDir)) {
+                    throw new \Exception(sprintf('Storage directory `%s` not writable', $storeDir));
+                }
+
                 return $config;
             }
         );
