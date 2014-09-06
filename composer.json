@@ -1,0 +1,22 @@
+{
+    "name": "pattack/pvote",
+    "description": "Voting application, written in zconf5 to vote for workshops",
+    "authors": [
+        {
+            "name": "Pouyan Heyratpour",
+            "email": "P.Heyratpour@Gmail.Com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "repositories" : [
+        {
+            "type": "composer",
+            "url": "http://satis.local"
+        }
+    ]
+}

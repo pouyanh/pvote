@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zconf5 Workshop Voting app</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/front/js/Quicksand.js" type="text/javascript"></script>
+    <script src="/front/js/zepto.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .center {
+            margin: 50px auto;
+            width: 1024px;
+        }
+
+        .center .content {
+            direction: rtl;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .msg {
+            margin: 5px auto;
+            text-align: center;
+            display: block;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // Zepto js
+        window['Z'] = $;
+
+        // The Quicksand as the selector
+        window['Q$'] = Quicksand.select;
+
+        function load() {
+            var frm = document.forms.namedItem('voting');
+
+            frm.addEventListener(
+                'submit',
+                function (e) {
+                    Z(Q$('input', this)).attr('disabled', true);
+
+                    Z.ajax(
+                        {
+                            'url': '/vote/commit',
+                            'type': 'POST',
+                            'data': {
+                                'vote': Z(Q$('select[name=vote]', this)).val()
+                            },
+                            'success': function () {
+                                window.location.reload();
+                            },
+                            'complete': (function () {
+                                Z(Q$('input', this)).removeAttr('disabled');
+                            }).apply(this)
+                        }
+                    );
+
+                    e.preventDefault();
+
+                    return false;
+                }
+            );
+        }
+    </script>
+</head>
+<body onload="load()">
+<div class="main">
+    <div class="center">
+        <div class="msg">کارگاه مورد علاقه‌ی خود را انتخاب کنید</div>
+        <div class="content">
+            <form name="voting" action="/" method="GET">
+                <select name="vote">
+                    <?php foreach ($options as $id => $title): ?>
+                        <option value='<?= $id ?>'><?= $title ?></option>
+                    <?php endforeach ?>
+                </select>
+                <input type="submit" value="ثبت"/>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

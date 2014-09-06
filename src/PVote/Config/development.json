@@ -1,0 +1,13 @@
+{
+    "storage": {
+        "path": "%ROOT_PATH%/var/storage"
+    },
+    "polling": {
+        "options": {
+            "filename": "%ROOT_PATH%/Options.xml"
+        },
+        "results": {
+            "filename": "%ROOT_PATH%/var/storage/votes.xml"
+        }
+    }
+}
